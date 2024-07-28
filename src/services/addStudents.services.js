@@ -66,13 +66,25 @@ const searchStuident = async (rollNumber) => {
     }
 }
 
+// const searchStuidentbybatchno = async (batchNo) => {
+//     try {
+//         const response = await Students.find({ batchNo: batchNo });
+//         console.log(response)
+//         return response
+//     } catch (error) {
+//         throw error
+//     }
+// }
+
 const searchStuidentbybatchno = async (batchNo) => {
     try {
+        console.log(`Searching for batchNo: ${batchNo}`); // Debugging statement
         const response = await Students.find({ batchNo: batchNo });
-        console.log(response)
-        return response
+        console.log(`Response from database: ${JSON.stringify(response)}`); // Debugging statement
+        return response;
     } catch (error) {
-        throw error
+        console.error(`Error occurred: ${error.message}`);
+        throw error;
     }
 }
 
