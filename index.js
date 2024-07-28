@@ -34,8 +34,8 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 // const faviconPath = path.join(__dirname, 'public', 'favicon.ico');
-app.use(favicon(path.join(__filename, 'public', 'favicon.ico')));
-
+const faviconPath = path.join(__dirname, 'public', 'favicon.ico');
+console.log('Resolved favicon path:', faviconPath);
 connectionDB()
     .then(res => console.log("Connected"))
     .catch(err => console.log("DB NOT Connected"))
