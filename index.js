@@ -8,6 +8,7 @@ import { dirname } from 'path';
 import { serverConfig } from './src/configs/server.config.js';
 import { DB_RETRY_LIMIT, DB_RETRY_TIMEOUT } from './src/constants/constants.js';
 import route from './src/routes/user.rotes.js';
+import favicon from 'serve-favicon';
 
 let connnectionRetries = 0
 const connectionDB = async () => {
