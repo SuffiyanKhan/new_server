@@ -32,13 +32,7 @@ const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
-// Ensure the temp directory exists
-// const tempDir = path.join(__dirname, 'temp/certificates');
-// const pdfDir = path.join(__dirname, 'tem/pdfs');
-// if (!fs.existsSync(tempDir)) {
-//     fs.mkdirSync(tempDir);
-// }
+const faviconPath = path.join(__dirname, 'public', 'favicon.ico');
 
 
 connectionDB()
@@ -57,7 +51,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors())
-
+app.use(favicon(faviconPath));
 
 
 app.use('/', route)

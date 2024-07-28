@@ -26,6 +26,7 @@
     "pdf-lib": "^1.17.1",
     "puppeteer": "^22.13.1",
     "qrcode": "^1.5.3",
+    "serve-favicon": "^2.5.0",
     "sib-api-v3-sdk": "^8.5.0",
     "uuid": "^10.0.0"
   },
