@@ -33,7 +33,7 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 // const faviconPath = path.join(__dirname, 'public', 'favicon.ico');
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__filename, 'public', 'favicon.ico')));
 
 connectionDB()
     .then(res => console.log("Connected"))
