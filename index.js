@@ -27,7 +27,7 @@ const connectionDB = async () => {
         }
     }
 }
-const PORT = serverConfig.appPort;
+const PORT = process.env.PORT || serverConfig.appPort;
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -47,7 +47,7 @@ connectionDB()
 
 
 
-    // Middleware for Handlebars
+// Middleware for Handlebars
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));

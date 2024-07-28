@@ -1,4 +1,4 @@
-import { addStudents, fetchAllStudentsData, dummaddStudents, getEnrolledData, deletedStudents, searchStuident ,searchStuidentbybatchno} from "../services/AddStudents.services.js";
+import { addStudents, fetchAllStudentsData, dummaddStudents, getEnrolledData, deletedStudents, searchStuident ,searchStuidentbybatchno} from "../services/addStudents.services.js";
 
 const addStudentsData = async (req, res) => {
     try {
