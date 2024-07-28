@@ -14,7 +14,7 @@ let connnectionRetries = 0
 const connectionDB = async () => {
     try {
         console.log("Establishing DB connection....")
-        await mongoose.connect(serverConfig.dbUri, { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoose.connect(serverConfig.dbUri);
         console.log('Db connected')
 
     } catch (error) {
