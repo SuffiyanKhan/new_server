@@ -32,8 +32,8 @@ const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const faviconPath = path.join(__dirname, 'public', 'favicon.ico');
-
+// const faviconPath = path.join(__dirname, 'public', 'favicon.ico');
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 connectionDB()
     .then(res => console.log("Connected"))
@@ -51,7 +51,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors())
-app.use(favicon(faviconPath));
+// app.use(favicon(faviconPath));
 
 
 app.use('/', route)
