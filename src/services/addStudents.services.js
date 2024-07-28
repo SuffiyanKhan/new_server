@@ -69,6 +69,7 @@ const searchStuident = async (rollNumber) => {
 const searchStuidentbybatchno = async (batchNo) => {
     try {
         const response = await Students.find({ batchNo: batchNo }).exec();
+        console.log(response)
         return response
     } catch (error) {
         throw error

@@ -89,7 +89,7 @@ const searchStudentRoll = async (req, res) => {
 };
 const searchStudentBatchNo = async (req, res) => {
     const batchNo = req.query.batchNo || '';
-    console.log(batchNo)
+    
 
     if (!batchNo) {
         return res.status(400).json({
