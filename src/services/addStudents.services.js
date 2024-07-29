@@ -80,7 +80,7 @@ const searchStuidentbybatchno = async (batchNo) => {
     try {
         console.log(`Searching for batchNo: ${batchNo}`); // Debugging statement
         // const response = await Students.find({ batchNo: String(batchNo) });
-        const response = await Students.find(batchNo).exec();
+        const response = await Students.find({ batchNo: String(batchNo)}).exec();
         console.log(`Response from database: ${JSON.stringify(response)}`); // Debugging statement
         return response;
     } catch (error) {
