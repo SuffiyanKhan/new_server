@@ -33,6 +33,7 @@ const dummaddStudents = async (payload) => {
 const fetchAllStudentsData = async () => {
     try {
         const response = await Students.find({}).exec();
+        console.log(response)
         return response
     } catch (error) {
         throw error
