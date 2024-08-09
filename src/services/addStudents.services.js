@@ -33,7 +33,6 @@ const dummaddStudents = async (payload) => {
 const fetchAllStudentsData = async () => {
     try {
         const response = await Students.find({}).exec();
-        console.log(response)
         return response
     } catch (error) {
         throw error
@@ -82,7 +81,6 @@ const searchStuidentbybatchno = async (batchNo) => {
         console.log(`Searching for batchNo: ${batchNo}`); // Debugging statement
         // const response = await Students.find({ batchNo: String(batchNo) });
         const response = await Students.find({ batchNo: String(batchNo)}).exec();
-        console.log(`Response from database: ${JSON.stringify(response)}`); // Debugging statement
         return response;
     } catch (error) {
         console.error(`Error occurred: ${error.message}`);

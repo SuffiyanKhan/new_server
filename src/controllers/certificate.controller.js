@@ -111,9 +111,10 @@ const certificategenerate = async (req, res) => {
 
 const getAllcertificategenerate = async (req, res) => {
     try {
-        const response = await getAllCertificatesData();
-        if (!response) return res.status(400).json({ status: 400, message: "bad request" })
-        return res.status(200).json({ status: 200, message: "success", data: response })
+        console.log(req.body)
+        // const response = await getAllCertificatesData();
+        // if (!response) return res.status(400).json({ status: 400, message: "bad request" })
+        return res.status(200).json({ status: 200, message: "success" })
     } catch (error) {
         if (error.name === 'ValidationError') {
             return res.status(400).json({ status: 400, message: "Validation Error", errorMessage: error.message });
@@ -194,7 +195,7 @@ const saveToDataBase = async (req, res) => {
                 savedCertificates.push(response);
             } catch (entryError) {
                 console.error("Error saving certificate entry:", entryError);
-                continue; 
+                continue;
             }
         }
 
