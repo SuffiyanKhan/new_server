@@ -111,7 +111,7 @@ const certificategenerate = async (req, res) => {
 
 const getAllcertificategenerate = async (req, res) => {
     try {
-        console.log(req.body)
+        console.log("data",req.body)
         // const response = await getAllCertificatesData();
         // if (!response) return res.status(400).json({ status: 400, message: "bad request" })
         return res.status(200).json({ status: 200, message: "success" })
