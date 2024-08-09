@@ -67,6 +67,7 @@ const cleanupTempFolder = () => {
 
 
 async function generateCertificates(dataArray) {
+    console.log(dataArray)
     const totalDataLength = dataArray.length;
 
     const limit = pLimit(10);

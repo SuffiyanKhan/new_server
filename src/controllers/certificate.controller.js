@@ -111,10 +111,10 @@ const certificategenerate = async (req, res) => {
 
 const getAllcertificategenerate = async (req, res) => {
     try {
-        console.log("data",req.body)
-        // const response = await getAllCertificatesData();
-        // if (!response) return res.status(400).json({ status: 400, message: "bad request" })
-        return res.status(200).json({ status: 200, message: "success" })
+        const response = await getAllCertificatesData();
+        console.log(response)
+        if (!response) return res.status(400).json({ status: 400, message: "bad request" })
+        return res.status(200).json({ status: 200, message: "success", data: response })
     } catch (error) {
         if (error.name === 'ValidationError') {
             return res.status(400).json({ status: 400, message: "Validation Error", errorMessage: error.message });
@@ -157,8 +157,9 @@ const getallstudentscertified = async (req, res) => {
 const generatecertificatestudents = async (req, res) => {
     try {
         const { data } = req.body;
-        console.log(data)
+        // console.log(data)
         const pdfFileNames = await generateCertificates(data);
+        console.log(pdfFileNames)
         await cleanupTempFolder();
         if (!pdfFileNames) {
             return res.status(400).send({ status: 400, message: "Bad Request" });
@@ -195,7 +196,7 @@ const saveToDataBase = async (req, res) => {
                 savedCertificates.push(response);
             } catch (entryError) {
                 console.error("Error saving certificate entry:", entryError);
-                continue;
+                continue; 
             }
         }
 
