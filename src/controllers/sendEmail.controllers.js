@@ -10,6 +10,7 @@ const sendEmail = async (req, res) => {
         await cleanupTempFolder()
         return res.status(200).json({ status: 200, message: "success send all emails", responseData: responseData })
     } catch (error) {
+        console .log(error.message)
         return res.status(500).json({ status: 500, message: "Error sending email ", errormessage: error.message })
     }
 }
