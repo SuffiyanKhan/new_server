@@ -10,11 +10,11 @@ import { serverConfig } from '../configs/server.config.js';
 
 const { certificate: Certificate, students: Students } = db
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 
 // const pdfDir = path.join(__dirname, 'temp/pdfs');
-const pdfDir = path.join(__dirname, 'services', 'temp', 'pdfs');
+const pdfDirectory = path.join(__dirname, 'services', 'temp', 'pdfs');
 
 const defaultClient = SibApiV3Sdk.ApiClient.instance;
 const apiKey = defaultClient.authentications['api-key'];
@@ -69,10 +69,12 @@ async function processCertificates(certificates) {
 async function sendCertificateEmail(certificate) {
 
     try {
-        if (!fs.existsSync(pdfDir)) {
-            fs.mkdirSync(pdfDir, { recursive: true });
+        // if (!fs.existsSync(pdfDir)) {
+        //     fs.mkdirSync(pdfDir, { recursive: true });
+        // }
+        if (!fs.existsSync(pdfDirectory)) {
+            fs.mkdirSync(pdfDirectory, { recursive: true });
         }
-
         if (!certificate.certificateUrl.startsWith('http')) {
             throw new Error(`Invalid certificate URL: ${certificate.certificateUrl}`);
         }
