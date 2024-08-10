@@ -14,7 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // const pdfDir = path.join(__dirname, 'temp/pdfs');
-const pdfDirectory = path.join(__dirname, 'services', 'temp', 'pdfs');
+const pdfDirectory = path.join(__dirname, 'temp', 'pdfs');
 
 const defaultClient = SibApiV3Sdk.ApiClient.instance;
 const apiKey = defaultClient.authentications['api-key'];
