@@ -10,8 +10,8 @@ import { serverConfig } from '../configs/server.config.js';
 
 const { certificate: Certificate, students: Students } = db
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // const pdfDir = path.join(__dirname, 'temp/pdfs');
 const pdfDirectory = path.join(__dirname, 'services', 'temp', 'pdfs');
